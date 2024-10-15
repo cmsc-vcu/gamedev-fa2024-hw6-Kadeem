@@ -6,7 +6,7 @@ is destroyed in a spectacular, slow-motion extravaganza.
 ## Authors
 
 - Nadeem Abdulmelik (abdulmelikna@vcu.edu)
-- Krish (@vcu.edu)
+- Krish Patel (patelkp7@vcu.edu)
 
 ## Game Description
 
