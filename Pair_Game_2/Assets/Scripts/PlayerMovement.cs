@@ -33,6 +33,6 @@ public class PlayerMovement : MonoBehaviour
     bool Grounded()
     {
         RaycastHit downInfo;
-        Raycast downwards = new Raycast(transform.position, new Vector3(transform.position.x, transform.position.y - 0.1, transform.position.z), out downInfo, 0.1f, 2);
+        return Physics.Raycast(transform.position, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), out downInfo, 0.1f, 2);
     }
 }
