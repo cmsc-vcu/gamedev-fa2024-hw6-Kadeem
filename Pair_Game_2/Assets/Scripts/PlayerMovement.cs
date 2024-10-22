@@ -29,4 +29,10 @@ public class PlayerMovement : MonoBehaviour
         //boing boing! this currently jumps infinitely haha
         if(Input.GetKeyDown(KeyCode.UpArrow)) rb.AddForce(new Vector3(0, jumpHeight, 0));
     }
+
+    bool Grounded()
+    {
+        RaycastHit downInfo;
+        Raycast downwards = new Raycast(transform.position, new Vector3(transform.position.x, transform.position.y - 0.1, transform.position.z), out downInfo, 0.1f, 2);
+    }
 }
