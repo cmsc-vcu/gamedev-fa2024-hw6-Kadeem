@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if(!DialogueManager.GetInstance().dialogueIsPlaying) Move();
+        else rb.velocity = new Vector3(0, rb.velocity.y, 0);
     }
 
     void Move()
