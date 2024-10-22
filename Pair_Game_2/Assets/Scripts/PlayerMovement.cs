@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float jumpHeight;
+    //public LayerMask platforms;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -27,12 +28,11 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(horiz, rb.velocity.y, 0);
 
         //boing boing! this currently jumps infinitely haha
-        if(Input.GetKeyDown(KeyCode.UpArrow)) rb.AddForce(new Vector3(0, jumpHeight, 0));
+        if(Input.GetKeyDown(KeyCode.UpArrow) && Grounded()) rb.AddForce(new Vector3(0, jumpHeight, 0));
     }
 
     bool Grounded()
     {
-        RaycastHit downInfo;
-        return Physics.Raycast(transform.position, new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z), out downInfo, 0.1f, 2);
+        return Physics2D.Raycast(transform.position, Vector2.down, 1.0f, 1<<6);
     }
 }
