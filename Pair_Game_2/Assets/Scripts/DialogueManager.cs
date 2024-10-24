@@ -11,11 +11,17 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     private Story currentStory;
     public bool dialogueIsPlaying {get; private set;}
-    public bool gottaChoose;
+    private bool gottaChoose;
+    [SerializeField] private Animator portraitAnimator;
 
     [Header ("Choices UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
+
+
+    //tags. add more as needed
+    private const string PORTRAIT_TAG = "portrait";
+    private const string SPEAKER_TAG = "speaker";
 
     private void Awake()
     {
@@ -83,10 +89,40 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = currentStory.Continue();
             DisplayChoices();
+
+            //handle tags
+            HandleTags(currentStory.currentTags);
         }
         else if(!gottaChoose)
         {
             StartCoroutine(ExitDialogueMode());
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach(string tag in currentTags)
+        {
+            //parse into kv pair
+            string[] splitTag = tag.Split(':');
+            if(splitTag.Length != 2)
+            {
+                Debug.LogError("Tag could not be parsed: " + tag);
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagVal = splitTag[1].Trim();
+
+            //handle the Tag
+            switch(tagKey)
+            {
+                case PORTRAIT_TAG:
+                    Debug.Log("portrait=" + tagVal);
+                    portraitAnimator.Play(tagVal);
+                    break;
+                default:
+                    Debug.Log("ayo wtf?");
+                    break;
+            }
         }
     }
 
