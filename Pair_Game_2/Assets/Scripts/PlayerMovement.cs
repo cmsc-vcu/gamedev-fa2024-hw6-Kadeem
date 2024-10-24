@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(!DialogueManager.GetInstance().dialogueIsPlaying) Move();
+        if(!DialogueManager.GetInstance().dialogueIsPlaying && !PauseManager.GetInstance().isPaused) Move();
         else rb.velocity = new Vector3(0, rb.velocity.y, 0);
     }
 
@@ -39,12 +39,12 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.Raycast(transform.position, Vector2.down, 1.0f, 1<<6); //ground layer is currently hard-coded to 6
     }
 
-    void setSpawn(float x, float y, float z)
+    public void setSpawn(float x, float y, float z)
     {
         spawnpoint = new Vector3(x, y, z);
     }
 
-    void setSpawn(Vector3 newSpawn)
+    public void setSpawn(Vector3 newSpawn)
     {
         spawnpoint = newSpawn;
     }
