@@ -402,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 598694183}
   dialogueText: {fileID: 1189563536}
-  gottaChoose: 0
+  portraitAnimator: {fileID: 1837783260}
   choices:
   - {fileID: 1506473819}
   - {fileID: 1889350801}
@@ -3174,7 +3174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chattable: {fileID: 910906587}
-  inkJSON: {fileID: 4900000, guid: f514036ee14f24b428d112190ffceba4, type: 3}
+  inkJSON: {fileID: 4900000, guid: d17c1de33bea78e4a8b6bd9746327e95, type: 3}
 --- !u!4 &2103371645
 Transform:
   m_ObjectHideFlags: 0
