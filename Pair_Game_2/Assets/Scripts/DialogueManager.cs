@@ -11,6 +11,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     private Story currentStory;
     public bool dialogueIsPlaying {get; private set;}
+    public bool gottaChoose;
+
+    [Header ("Choices UI")]
+    [SerializeField] private GameObject[] choices;
+    private TextMeshProUGUI[] choicesText;
 
     private void Awake()
     {
@@ -30,6 +35,16 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        gottaChoose = false;
+
+        //get choices stuff
+        choicesText = new TextMeshProUGUI[choices.Length];
+        int i = 0;
+        foreach (GameObject choice in choices)
+        {
+            choicesText[i] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            i++;
+        }
     }
 
     private void Update()
@@ -64,13 +79,46 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueStory()
     {
-        if(currentStory.canContinue)
+        if(currentStory.canContinue && !gottaChoose)
         {
             dialogueText.text = currentStory.Continue();
+            DisplayChoices();
         }
-        else
+        else if(!gottaChoose)
         {
             StartCoroutine(ExitDialogueMode());
         }
+    }
+
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
+
+        //too many choices for UI
+        if(currentChoices.Count > choices.Length)
+        {
+            Debug.LogError("More choices were given than UI can support. # choices: " + currentChoices.Count);
+        }
+
+        int index = 0;
+        foreach (Choice choice in currentChoices)
+        {
+            choices[index].gameObject.SetActive(true);
+            choicesText[index].text = choice.text;
+            gottaChoose=true;
+            index++;
+        }
+
+        for(int i = index; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void MakeChoice(int choiceIndex)
+    {
+        gottaChoose=false;
+        currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
     }
 }
