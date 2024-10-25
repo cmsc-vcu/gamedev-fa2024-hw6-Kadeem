@@ -16,7 +16,7 @@ This is an adventure platformer with a hevy enphasis on NPC interactions to tell
 ## Important Links
 
 - Game URL: <https://play.unity.com/en/games/c631c37f-1020-43b0-8184-833d5243d3c2/webgl-builds >
-- GITHUB URL: < ... >
+- GITHUB URL: <(https://github.com/cmsc-vcu/gamedev-fa2024-hw6-Kadeem/tree/aaaaUUGH) >
 - Gameplay Video URL: <(https://youtu.be/t8zH1Xdfds4) >
 - Google Doc writeup: <(https://docs.google.com/document/d/1lp4Yz2u-lo4L7RWFlCDuskJRPa9rO1NoUU70NPZ1eBs/edit?usp=sharing) >
 
