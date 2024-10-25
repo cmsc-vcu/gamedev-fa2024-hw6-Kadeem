@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Vector3 spawnpoint;
     public CameraMovement cam;
+    private Animator anim;
 
     void Start()
     {
@@ -28,6 +29,14 @@ public class PlayerMovement : MonoBehaviour
         //move sideways
         float horiz = Input.GetAxis("Horizontal") * speed;
         rb.velocity = new Vector3(horiz, rb.velocity.y, 0);
+
+        if(Input.GetAxis("Horizontal") > 0.1 || Input.GetAxis("Horizontal") < -0.1)
+        {
+            anim.Play("Player Walk");
+            if(Input.GetAxis("Horizontal") < 0) transform.localScale = new Vector3(-1f, 1f, 1f);
+            else transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else anim.Play("Player Idle");
         
         //jump if on the ground
         if(Input.GetKeyDown(KeyCode.UpArrow) && Grounded()) rb.AddForce(new Vector3(0, jumpHeight, 0));
