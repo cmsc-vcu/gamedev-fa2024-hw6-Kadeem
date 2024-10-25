@@ -11,13 +11,13 @@ ah, yes, my favorite chaotic mess of a meal: P A N C A F F L E S #portrait:mc-sm
 you know the way to my heart, merry...
 Yes, yes. It's always food. #portrait:merry-default
 So, there's good news and bad news... what do you want first? #portrait:merry-awkward
-* [Good news]
++ [Good news]
     Well, the good news is that everyone made and ordered you presents! #portrait:merry-excited
     Unfortunately, the dude who was supposed to deliver them to us crashed into a tree, so a bunch of your presents were scattered around the forest. #portrait:merry-awkward
     woah! is he okay? #portrait:mc-confused
     Yeah, he's fine. I gave him an ice pack. #portrait:merry-default
         -> cont
-* [Bad news]
++ [Bad news]
     Well, the bad news is that the mailman crashed into a tree, so a bunch of your presents got scattered around the forest. #portrait:merry-awkward
     woah! is he okay?! #portrait:mc-confused
     Yes, he's fine. I gave him an ice pack. The good news is that everyone remembered your birthday! #portrait:merry-default
