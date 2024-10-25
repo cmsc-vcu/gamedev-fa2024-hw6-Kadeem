@@ -16,9 +16,9 @@ public class Collectible : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
-        {            
-            visual.SetActive(false);     
+        {               
             CollectibleManager.GetInstance().Collect();
+            Destroy(this.gameObject);
         }
     }
 }
