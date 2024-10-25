@@ -38,14 +38,14 @@ public class PlayerMovementIntro : MonoBehaviour
     void Animate()
     {
         anim.SetBool("grounded", Grounded());
-        anim.SetBool("walking", Input.GetAxis("Horizontal") > 0.1f || Input.GetAxis("Horizontal") < -0.1f);
+        anim.SetBool("walking", (Input.GetAxis("Horizontal") > 0.1f || Input.GetAxis("Horizontal") < -0.1f) && !DialogueManager.GetInstance().dialogueIsPlaying);
 
     }
     
     //checks if currently on the ground
     bool Grounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, 0.1f, 1<<6); //ground layer is currently hard-coded to 6
+        return Physics2D.Raycast(transform.position, Vector2.down, 5.0f, 1<<6); //ground layer is currently hard-coded to 6
     }
 
     public void setSpawn(float x, float y, float z)
