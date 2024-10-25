@@ -32,26 +32,13 @@ public class PlayerMovementIntro : MonoBehaviour
         
         //jump if on the ground
         if(Input.GetKeyDown(KeyCode.UpArrow) && Grounded()) rb.AddForce(new Vector3(0, jumpHeight, 0));
-        Animate(horiz / speed);
+        Animate();
     }
 
-    void Animate(float horiz)
+    void Animate()
     {
-        if(!Grounded())
-        {
-            anim.Play("Jump");
-            Debug.Log("Not grounded");
-        }
-        else if(horiz > 0.1f || horiz < -0.1)
-        {
-             anim.Play("Player Walk");
-             if(horiz < 0) transform.localScale = new Vector3(-1f, 1f, 1f);
-             else transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        else
-        {
-            anim.Play("Player Idle");
-        }
+        anim.SetBool("grounded", Grounded());
+        anim.SetBool("walking", Input.GetAxis("Horizontal") > 0.1f || Input.GetAxis("Horizontal") < -0.1f);
 
     }
     
