@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Waterfall anim
+  m_Name: vine
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -17,46 +17,21 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves:
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: 9094447565118868644, guid: cb29ab98ec4cffe408ef0e4004f6f5aa, type: 3}
-    - time: 3.9166667
-      value: {fileID: 3966599762826591631, guid: cb29ab98ec4cffe408ef0e4004f6f5aa, type: 3}
-    - time: 7.8333335
-      value: {fileID: 4130990801251428086, guid: cb29ab98ec4cffe408ef0e4004f6f5aa, type: 3}
-    attribute: m_Sprite
-    path: 
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  m_SampleRate: 12
+  m_PPtrCurves: []
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: 9094447565118868644, guid: cb29ab98ec4cffe408ef0e4004f6f5aa, type: 3}
-    - {fileID: 3966599762826591631, guid: cb29ab98ec4cffe408ef0e4004f6f5aa, type: 3}
-    - {fileID: 4130990801251428086, guid: cb29ab98ec4cffe408ef0e4004f6f5aa, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 7.916667
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
