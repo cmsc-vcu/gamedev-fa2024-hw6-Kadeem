@@ -2010,7 +2010,7 @@ Transform:
   m_GameObject: {fileID: 433678968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.97, y: -1.91, z: 0}
+  m_LocalPosition: {x: 4, y: -1.44, z: 0}
   m_LocalScale: {x: 0.55634606, y: 0.55634606, z: 0.55634606}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3782,12 +3782,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1216359612}
+  m_Father: {fileID: 1036468517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -274, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -480.96997, y: 1.385498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &982009796
 Animator:
@@ -3799,7 +3799,7 @@ Animator:
   m_GameObject: {fileID: 982009794}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d06652685ce4c6248a4b8f7c0bc8f620, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8a57d8dc824731542bdbc174c67f2af1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3823,7 +3823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3982,6 +3982,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 982009795}
   - {fileID: 1371840220}
   - {fileID: 1216359612}
   m_Father: {fileID: 1446750510}
@@ -4446,7 +4447,6 @@ RectTransform:
   - {fileID: 1804693928}
   - {fileID: 333419086}
   - {fileID: 458337209}
-  - {fileID: 982009795}
   m_Father: {fileID: 1036468517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
