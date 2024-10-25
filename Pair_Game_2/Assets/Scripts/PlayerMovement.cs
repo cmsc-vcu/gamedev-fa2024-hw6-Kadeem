@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         spawnpoint = new Vector3(0, 0, 0);
     }
 
@@ -33,19 +34,27 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetAxis("Horizontal") > 0.1 || Input.GetAxis("Horizontal") < -0.1)
         {
             //anim.Play("Player Walk");
-            if(Input.GetAxis("Horizontal") < 0) transform.localScale = new Vector3(-1f, 1f, 1f);
-            else transform.localScale = new Vector3(1f, 1f, 1f);
+            if(Input.GetAxis("Horizontal") < 0) transform.localScale = new Vector3(-0.25f, 0.25f, 0.25f);
+            else transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
         }
         //else anim.Play("Player Idle");
         
         //jump if on the ground
         if(Input.GetKeyDown(KeyCode.UpArrow) && Grounded()) rb.AddForce(new Vector3(0, jumpHeight, 0));
+
+        Animate();
+    }
+
+    void Animate()
+    {
+        anim.SetBool("grounded", Grounded());
+        anim.SetBool("walking", (Input.GetAxis("Horizontal") > 0.1f || Input.GetAxis("Horizontal") < -0.1f) && !DialogueManager.GetInstance().dialogueIsPlaying);
     }
     
     //checks if currently on the ground
     bool Grounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, 1.0f, 1<<6); //ground layer is currently hard-coded to 6
+        return Physics2D.Raycast(transform.position, Vector2.down, 3.0f, 1<<6); //ground layer is currently hard-coded to 6
     }
 
     public void setSpawn(float x, float y, float z)
