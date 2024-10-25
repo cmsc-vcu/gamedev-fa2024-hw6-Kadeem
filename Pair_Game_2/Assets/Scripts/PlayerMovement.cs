@@ -32,11 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetAxis("Horizontal") > 0.1 || Input.GetAxis("Horizontal") < -0.1)
         {
-            anim.Play("Player Walk");
+            //anim.Play("Player Walk");
             if(Input.GetAxis("Horizontal") < 0) transform.localScale = new Vector3(-1f, 1f, 1f);
             else transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        else anim.Play("Player Idle");
+        //else anim.Play("Player Idle");
         
         //jump if on the ground
         if(Input.GetKeyDown(KeyCode.UpArrow) && Grounded()) rb.AddForce(new Vector3(0, jumpHeight, 0));

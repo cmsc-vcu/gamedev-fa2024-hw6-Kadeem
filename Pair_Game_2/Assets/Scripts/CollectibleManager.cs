@@ -9,6 +9,7 @@ public class CollectibleManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI collectibleText;
     private static int collectibleCount;
     [SerializeField] private int total;
+    [SerializeField] private GameObject winScreen;
     
 
     public static CollectibleManager GetInstance()
@@ -29,6 +30,7 @@ public class CollectibleManager : MonoBehaviour
     {
         collectibleCount = 0;
         collectibleText.text = collectibleCount.ToString() + "/" + total.ToString();
+        winScreen.SetActive(false);
     }
 
     public void Collect()
@@ -40,11 +42,12 @@ public class CollectibleManager : MonoBehaviour
     
     void Update()
     {
-        if(collectibleCount>= total)
+        if(collectibleCount== total)
         {
-            //trigger win here. this is debug code for now
+            //trigger win effects
+            winScreen.SetActive(true);
             print("YIPEEEEEEEEEE");
-
+            collectibleCount++;
         }
     }
 
